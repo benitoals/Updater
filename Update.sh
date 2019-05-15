@@ -15,6 +15,7 @@ while read l; do
 done < "$f"
 rm "$f"
 
+# To update git based powershelll modules
 echo 
 echo -e "\e[01;31mUpdading powershell modules...\e[00m"
 cd C:\\Users\\User\\Path\\Documentos\\WindowsPowerShell\\Modules
