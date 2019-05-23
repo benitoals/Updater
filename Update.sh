@@ -1,5 +1,5 @@
 #!/bin/bash
-# Date: 2019-05-15
+# Date: 2015-03-05
 # To update GIT
 echo 
 echo -e "\e[01;31mUpdading git based applications...\e[00m"
@@ -15,17 +15,31 @@ while read l; do
 done < "$f"
 rm "$f"
 
-# To update git based powershelll modules
 echo 
 echo -e "\e[01;31mUpdading powershell modules...\e[00m"
-cd C:\\Users\\User\\Path\\Documentos\\WindowsPowerShell\\Modules
+cd C:\\Users\\user\\OneDrive\\Documentos\\WindowsPowerShell\\Modules
 g="C:\\Windows\\Temp\\update2.tmp"
 ls -1 > "$g"
 while read l; do
-        cd "C:\\Users\\User\\Path\\Documentos\\WindowsPowerShell\\Modules\\$l";
+        cd "C:\\Users\\user\\OneDrive\\Documentos\\WindowsPowerShell\\Modules\\$l";
         if [[ $(ls -1a | grep ".git" | wc -l) -gt 0 ]]; then
                 echo -e "-------\nUpdating $l module."
                 git pull;
         fi;
 done < "$g"
 rm "$g"
+
+echo 
+echo -e "\e[01;31mUpdading composer web-based applications...\e[00m"
+cd C:\\wamp64\\www
+f="C:\Windows\Temp\update3.tmp"
+ls -1 > "$f"
+while read l; do
+        cd "C:\\wamp64\\www\\$l";
+
+        if [[ $(ls -1a | grep "composer.json" | wc -l) -gt 0 ]]; then
+                echo -e "-------\nUpdating $l folder."
+                composer update;
+        fi;
+done < "$f"
+rm "$f"
