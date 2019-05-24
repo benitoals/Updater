@@ -33,7 +33,7 @@ echo
 echo -e "\e[01;31mUpdading composer web-based applications...\e[00m"
 cd C:\\wamp64\\www
 f="C:\Windows\Temp\update3.tmp"
-ls -d */ > "$f"
+ls -d */ > "$h"
 while read l; do
         cd "C:\\wamp64\\www\\$l";
 
